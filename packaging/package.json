@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "name": "tsudev-luyen-go-phim",
+  "winget": "tsudev.LuyenGoPhim",
+  "homepage": "https://luyen-go-phim.tsudev.com",
+  "license": "MIT",
+  "description": {
+    "vi": "Luyện gõ phím ngoại tuyến: đo WPM, độ chính xác, theo dõi tiến bộ ngay trên máy",
+    "en": "Offline typing trainer: WPM, accuracy and progress tracking, all on your device"
+  },
+  "release": {
+    "repo": "TsuGameLabs/tsudev-luyen-go-phim-releases",
+    "tagRegex": "^v(?<version>\\d+\\.\\d+\\.\\d+)(?:-r(?<revision>\\d+))?$",
+    "sums": "SHA256SUMS.txt"
+  },
+  "assets": {
+    "windows-x64": {
+      "file": "tsudev-luyen-go-phim-{version}-windows-x86-64.zip",
+      "kind": "portable",
+      "bin": "tsudev-luyen-go-phim.exe"
+    },
+    "windows-x64-installer": {
+      "file": "tsudev-luyen-go-phim-{version}-windows-x86-64-setup.exe",
+      "kind": "installer",
+      "installer": "nsis"
+    },
+    "linux-x64": {
+      "file": "tsudev-luyen-go-phim-{version}-linux-x86-64.tar.gz",
+      "kind": "tar",
+      "bin": "tsudev-luyen-go-phim"
+    },
+    "linux-x64-appimage": {
+      "file": "tsudev-luyen-go-phim-{version}-linux-x86-64.AppImage",
+      "kind": "appimage"
+    }
+  },
+  "linux": {
+    "command": "tsudev-luyen-go-phim",
+    "icon": "icon.png",
+    "desktop": {
+      "name": "Luyện Gõ Phím",
+      "genericName": {
+        "vi": "Luyện gõ phím",
+        "en": "Typing trainer"
+      },
+      "categories": [
+        "GTK",
+        "Education"
+      ],
+      "keywords": [
+        "typing",
+        "WPM",
+        "keyboard",
+        "tsudev"
+      ],
+      "wmClass": "tsudev-luyen-go-phim"
+    },
+    "deb": {
+      "depends": [
+        "libc6 (>= 2.35)",
+        "libwebkit2gtk-4.1-0",
+        "libgtk-3-0 | libgtk-3-0t64"
+      ],
+      "section": "games"
+    },
+    "rpm": {
+      "depends": [
+        "libwebkit2gtk-4.1.so.0()(64bit)",
+        "libgtk-3.so.0()(64bit)"
+      ],
+      "group": "Amusements/Games"
+    }
+  },
+  "channels": [],
+  "planned": [
+    "apt",
+    "rpm",
+    "winget",
+    "scoop"
+  ]
+}
